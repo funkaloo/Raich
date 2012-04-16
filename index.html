@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+	<title>Raichu</title>
+	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/darkstrap.css">
+	<link rel="stylesheet" href="css/chosen.css">
+	<link rel="stylesheet" href="css/darkchosen.css">
+	<link rel="stylesheet" href="css/jquery.jscrollpane.css">
+  <link rel="stylesheet" href="css/raichu.css">
+	<script language="JavaScript" src="js/jquery-1.7.1.min.js"></script>
+	<script language="JavaScript" src="js/bootstrap.min.js"></script>
+	<script language="JavaScript" src="js/bootstrap-dropdown.js"></script>
+	<script language="JavaScript" src="js/bootstrap-tooltip.js"></script>
+	<script language="JavaScript" src="js/bootstrap-popovers.js"></script>
+	<script language="JavaScript" src="js/jquery.mousewheel.js"></script>
+	<script language="JavaScript" src="js/jquery.jscrollpane.min.js"></script>
+	<script language="JavaScript" src="js/chosen.jquery.min.js"></script>
+  <script language="JavaScript" src="js/project.us.modals.js"></script>
+	  
+	<style type="text/css">
+		.test
+		{
+			height:790px;
+		}
+		
+			/*scrollpane custom CSS*/
+		.jspVerticalBar {
+			width: 8px;
+			background: transparent;
+			right:10px;
+		}
+		
+		.jspHorizontalBar {
+			bottom: 5px;
+			width: 100%;
+			height: 8px;
+			background: transparent;
+		}
+		.jspTrack {
+			background: transparent;
+		}
+		
+		.jspDrag {
+			background: url(img/transparent-black.png) repeat;
+			-webkit-border-radius:4px;
+			-moz-border-radius:4px;
+			border-radius:4px;
+		}
+		
+		.jspHorizontalBar .jspTrack,
+		.jspHorizontalBar .jspDrag {
+			float: left;
+			height: 100%;
+		}
+			
+		.jspCorner {
+			display:none
+		}
+		
+		.us-section-header {
+			width: 100%;
+			margin: 0 auto;
+			position:relative;
+		}
+		
+		.us-section-header-left {
+			float: left;
+			width: 400px;
+			margin: 0 auto;
+		}
+		
+		.us-section-header-right {
+			float: right;
+			width: 100px;
+			margin: 3px 15px 0px 0px;
+			text-align: right;
+		}
+		
+		.us-section-content {
+			margin: 5px 5px 5px 5px;
+		}
+		.no-underline:hover {
+			text-decoration: none;
+		}
+		
+		.no-search div.chzn-search {
+		  display: none;
+		}
+	</style>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+	</head>
+	<body data-spy="scroll" data-target=".subnav">
+	  <div class="navbar navbar-fixed-top">
+	    <div class="navbar-inner">
+	      <div class="container">
+	        <a class="brand" href="#">Team Rocket</a>
+	        <div class="nav-collapse">
+	          <ul class="nav">
+	            <li><a href="#">Logs</a></li>
+	            <li class="active"><a href="#">Projects</a></li>
+	            <li><a href="#">About</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="container">
+			<div class="row">
+				<div class="span12">
+					<div style="height:50px;"></div>
+					<div style="height:150px;"><img src="img/projects.png"></div>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Teams</a><span class="divider">/</span>
+						</li>
+						<li>
+							<a href="#">Team Rocket</a><span class="divider">/</span>
+						</li>
+						<li class="active">Projects</li>
+					</ul>
+					<section id="xkcd">
+						<div class="subnav">
+							<ul class="nav nav-pills">
+								<li><a href="#xkcd"><img src="img/balls/ball1.png" style="height:15px; width:15px; padding-bottom:5px;"> XKCD</a></li>
+								<li><a href="#penny-arcade"><img src="img/balls/ball4.png" style="height:15px; width:15px; padding-bottom:5px;"> Penny Arcade</a></li>
+								<li><a href="#dilbert"><img src="img/balls/ball5.png" style="height:15px; width:15px; padding-bottom:5px;"> Dilbert</a></li>
+								<li><a href="#phd-comics"><img src="img/balls/ball2.png" style="height:15px; width:15px; padding-bottom:5px;"> PhD Comics</a></li>
+								<li><a href="#8bit-theater"><img src="img/balls/ball3.png" style="height:15px; width:15px; padding-bottom:5px;"> 8-bit Theater</a></li>
+								<li class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-top:12px; padding-bottom:10px;">Other Projects <b class="caret"></b></a>
+									<ul class="dropdown-menu">
+										<li><a href="#project1"><img src="img/balls/ball2.png" style="height:15px; width:15px; padding-bottom:5px;"> Other Uno</a></li>
+										<li><a href="#project1"><img src="img/balls/ball5.png" style="height:15px; width:15px; padding-bottom:5px;"> Other Dos</a></li>
+										<li><a href="#project1"><img src="img/balls/ball1.png" style="height:15px; width:15px; padding-bottom:5px;"> Other Tres</a></li>
+									</ul>
+								</li>
+								<li><a href="#add-project" style="padding-top:12px; padding-bottom:10px;">Add Project</a></li>
+							</ul>
+						</div>
+						<div class="well">
+							<div class="project-header clearfix">
+								<div class="project-title" style="float:left;"><h2><img src="img/balls/ball1.png" style="height:30px; width:30px; padding-bottom:8px;"> <a target="new" href="http://www.xkcd.com" class="dotted">XKCD</a></h2></div>
+								<div class="project-like" style="float:right;"><button class="btn btn-large btn-success disabled" disabled="disabled">Up</button> <button class="btn btn-large btn-primary">Down</button></div>
+							</div>
+							<div class="project-product-owners clearfix">
+								<div class="product-owners" style="float:left; margin-top:10px;"><i class="icon-envelope icon-white"></i> <a class="dotted" href="mailto:asheketchum@pokemon.com">Ashe Ketchum</a>, <a class="dotted" href="mailto:professoroak@pokemon.com">Professor Oak</a></div>
+								<div class="project-admin-options" style="float:right; margin-top:3px;">
+									<div class="btn-group">
+										<button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"><i class="icon-cog icon-white"></i> Admin Options &nbsp;<span class="caret"></span></button>
+										<ul class="dropdown-menu">
+											<li><a data-toggle="modal" href="#xkcd-edit-descriptions"><i class="icon-pencil icon-white"></i> Edit Project Descriptions</a></li>
+											<li><a data-toggle="modal" href="#xkcd-manage-screenshots"><i class="icon-picture icon-white"></i> Manage Screenshots</a></li>
+											<li><a data-toggle="modal" href="#xkcd-edit-goals"><i class="icon-time icon-white"></i> Edit Goals</a></li>
+											<li><a href="#"><i class="icon-ok icon-white"></i> Edit Business Needs</a></li>
+											<li><a href="#"><i class="icon-download-alt icon-white"></i> Edit Install Info</a></li>
+											<li><a href="#"><i class="icon-trash icon-white"></i> Delete Project</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<div class="well">
+							<blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper interdum orci, vel elementum felis porta sed. Nam cursus porttitor enim, ultrices luctus neque interdum pretium. Aliquam quam lorem, vestibulum non ullamcorper eget, elementum in enim amet.
+							</blockquote>
+							<div id="xkcd-carousel" class="carousel">
+								<div class="carousel-inner">
+									<div class="active item">
+										<img src="img/screenshots/xkcd1.jpg">
+										<div class="carousel-caption">
+											<h4>XKCD 1</h4>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+										</div>
+									</div>
+									<div class="item">
+										<img src="img/screenshots/xkcd2.jpg">
+										<div class="carousel-caption">
+											<h4>XKCD 2</h4>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+										</div>
+									</div>
+								</div>
+								<a class="carousel-control left" href="#xkcd-carousel" data-slide="prev">&lsaquo;</a>
+								<a class="carousel-control right" href="#xkcd-carousel" data-slide="next">&rsaquo;</a>
+							</div>
+						</div>
+						</section>
+						<section id="penny-arcade">
+						<div class="well">
+							<div class="project-footer clearfix">
+								<div class="project-misc-details" style="float:left;">
+									<a data-toggle="modal" href="#xkcd-goals"><button type="submit" class="btn btn-inverse"><i class="icon-time icon-white"></i> Goals</button></a> <button type="submit" class="btn btn-inverse"><i class="icon-ok icon-white"></i> Business Needs</button> <button type="submit" class="btn btn-inverse"><i class="icon-download-alt icon-white"></i> Install Info</button> <button type="submit" class="btn btn-danger"><i class="icon-fire icon-white"></i> Patch Notes</button>
+								</div>
+								<div class="project-misc-details" style="float:right;">
+									<a href="#xkcd" class="dotted"><i class="icon-retweet icon-white"></i> Share This</a>
+								</div>
+							</div>
+						</div>
+					
+					
+					<!-- Penny Arcade -->
+					<div class="project-spacing" style="height:70px;"></div>
+					
+						<div class="well">
+							<div class="project-header clearfix">
+								<div class="project-title" style="float:left;"><h2><img src="img/balls/ball4.png" style="height:30px; width:30px; padding-bottom:8px;"> <a target="new" href="http://www.penny-arcade.com/comic" class="dotted">Penny Arcade</a></h2></div>
+								<div class="project-like" style="float:right;"><button class="btn btn-large btn-success">Up</button> <button class="btn btn-large btn-primary">Down</button></div>
+							</div>
+							<div class="project-product-owners clearfix">
+								<div class="product-owners" style="float:left; margin-top:10px;"><i class="icon-envelope icon-white"></i> <a class="dotted" href="mailto:asheketchum@pokemon.com">Ashe Ketchum</a>, <a class="dotted" href="mailto:professoroak@pokemon.com">Professor Oak</a></div>
+								<div class="project-admin-options" style="float:right; margin-top:3px;">
+									<div class="btn-group">
+										<button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"><i class="icon-cog icon-white"></i> Admin Options &nbsp;<span class="caret"></span></button>
+										<ul class="dropdown-menu">
+											<li><a data-toggle="modal" href="#xkcd-edit-descriptions"><i class="icon-pencil icon-white"></i> Edit Project Descriptions</a></li>
+											<li><a data-toggle="modal" href="#xkcd-manage-screenshots"><i class="icon-picture icon-white"></i> Manage Screenshots</a></li>
+											<li><a data-toggle="modal" href="#xkcd-edit-goals"><i class="icon-time icon-white"></i> Edit Goals</a></li>
+											<li><a href="#"><i class="icon-ok icon-white"></i> Edit Business Needs</a></li>
+											<li><a href="#"><i class="icon-download-alt icon-white"></i> Edit Install Info</a></li>
+											<li><a href="#"><i class="icon-trash icon-white"></i> Delete Project</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<div class="well">
+							<blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper interdum orci, vel elementum felis porta sed. Nam cursus porttitor enim, ultrices luctus neque interdum pretium. Aliquam quam lorem, vestibulum non ullamcorper eget, elementum in enim amet.
+							</blockquote>
+							<div id="penny-arcade-carousel" class="carousel">
+								<div class="carousel-inner">
+									<div class="active item">
+										<img src="img/screenshots/pennyarcade1.jpg">
+										<div class="carousel-caption">
+											<h4>Penny Arcade 1</h4>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+										</div>
+									</div>
+								</div>
+								<a class="carousel-control left" href="#xkcd-carousel" data-slide="prev">&lsaquo;</a>
+								<a class="carousel-control right" href="#xkcd-carousel" data-slide="next">&rsaquo;</a>
+							</div>
+						</div>
+						</section>
+						<section id="dilbert">
+						<div class="well">
+							<div class="project-footer clearfix">
+								<div class="project-misc-details" style="float:left;">
+									<a data-toggle="modal" href="#xkcd-goals"><button type="submit" class="btn btn-inverse"><i class="icon-time icon-white"></i> Goals</button></a> <button type="submit" class="btn btn-inverse"><i class="icon-ok icon-white"></i> Business Needs</button> <button type="submit" class="btn btn-inverse"><i class="icon-download-alt icon-white"></i> Install Info</button> <button type="submit" class="btn btn-danger"><i class="icon-fire icon-white"></i> Patch Notes</button>
+								</div>
+								<div class="project-misc-details" style="float:right;">
+									<a href="#penny-arcade" class="dotted"><i class="icon-retweet icon-white"></i> Share This</a>
+								</div>
+							</div>
+						</div>
+
+					<!-- Dilbert -->
+					<div class="project-spacing" style="height:70px;"></div>
+					
+						<div class="well">
+							<div class="project-header clearfix">
+								<div class="project-title" style="float:left;"><h2><img src="img/balls/ball5.png" style="height:30px; width:30px; padding-bottom:8px;"> <a target="new" href="http://www.dilbert.com/comic" class="dotted">Dilbert</a></h2></div>
+								<div class="project-like" style="float:right;"><button class="btn btn-large btn-success">Up</button> <button class="btn btn-large btn-primary disabled" disabled="disabled">Down</button></div>
+							</div>
+							<div class="project-product-owners clearfix">
+								<div class="product-owners" style="float:left; margin-top:10px;"><i class="icon-envelope icon-white"></i> <a class="dotted" href="mailto:asheketchum@pokemon.com">Ashe Ketchum</a>, <a class="dotted" href="mailto:professoroak@pokemon.com">Professor Oak</a></div>
+								<div class="project-admin-options" style="float:right; margin-top:3px;">
+									<div class="btn-group">
+										<button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"><i class="icon-cog icon-white"></i> Admin Options &nbsp;<span class="caret"></span></button>
+										<ul class="dropdown-menu">
+											<li><a data-toggle="modal" href="#xkcd-edit-descriptions"><i class="icon-pencil icon-white"></i> Edit Project Descriptions</a></li>
+											<li><a data-toggle="modal" href="#xkcd-manage-screenshots"><i class="icon-picture icon-white"></i> Manage Screenshots</a></li>
+											<li><a data-toggle="modal" href="#xkcd-edit-goals"><i class="icon-time icon-white"></i> Edit Goals</a></li>
+											<li><a href="#"><i class="icon-ok icon-white"></i> Edit Business Needs</a></li>
+											<li><a href="#"><i class="icon-download-alt icon-white"></i> Edit Install Info</a></li>
+											<li><a href="#"><i class="icon-trash icon-white"></i> Delete Project</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<div class="well">
+							<blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper interdum orci, vel elementum felis porta sed. Nam cursus porttitor enim, ultrices luctus neque interdum pretium. Aliquam quam lorem, vestibulum non ullamcorper eget, elementum in enim amet.
+							</blockquote>
+							<div id="penny-arcade-carousel" class="carousel">
+								<div class="carousel-inner">
+									<div class="active item">
+										<img src="img/screenshots/dilbert1.jpg">
+										<div class="carousel-caption">
+											<h4>Dilbert</h4>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+										</div>
+									</div>
+								</div>
+								<a class="carousel-control left" href="#xkcd-carousel" data-slide="prev">&lsaquo;</a>
+								<a class="carousel-control right" href="#xkcd-carousel" data-slide="next">&rsaquo;</a>
+							</div>
+						</div>
+						<div class="well">
+							<div class="project-footer clearfix">
+								<div class="project-misc-details" style="float:left;">
+									<a data-toggle="modal" href="#xkcd-goals"><button type="submit" class="btn btn-inverse"><i class="icon-time icon-white"></i> Goals</button></a> <button type="submit" class="btn btn-inverse"><i class="icon-ok icon-white"></i> Business Needs</button> <button type="submit" class="btn btn-inverse"><i class="icon-download-alt icon-white"></i> Install Info</button> <button type="submit" class="btn btn-danger"><i class="icon-fire icon-white"></i> Patch Notes</button>
+								</div>
+								<div class="project-misc-details" style="float:right;">
+									<a href="#dilbert" class="dotted"><i class="icon-retweet icon-white"></i> Share This</a>
+								</div>
+							</div>
+						</div>
+					</section>
+					<div class="project-spacing" style="height:500px;"></div>
+				</div>
+			</div>
+	  </div>
+
+
+<!-- Hidden Modals -->
+	<!-- Edit Project Description -->
+	<div id="xkcd-edit-descriptions" class="modal hide fade">
+		<div class="modal-header">
+			&nbsp;<a class="close" data-dismiss="modal" >&times;</a>
+		</div>
+		<div class="modal-body">
+			<div class="row">
+				<div class="span7">
+					<form class="form-horizontal">
+						<fieldset>
+							<legend>Project Descriptions</legend>
+							<div class="control-group">
+								<label class="control-label" for="project-name-input">Title</label>
+								<div class="controls">
+									<input type="text" style="width:250px" value="XKCD" id="project-name-input">
+								</div>
+							</div>
+						  <div class="control-group">
+								<label class="control-label" for="project-url-input">URL</label>
+								<div class="controls">
+									<input type="text" style="width:250px" value="http://www.xkcd.com" id="project-url-input">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="project-icon-upload">Icon</label>
+								<div class="controls">
+									<div class="well" style="height:40px; width:50px;">
+										<center><img src="img/balls/ball1.png" style="height:30px; width:30px;"></center>
+									</div>
+									<input class="input-file" id="project-icon-upload" type="file">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="project-name-input">Points of Contact</label>
+								<div class="controls">
+									<select data-placeholder="Choose users." class="chzn-select" style="width:340px;" multiple>
+										<optgroup label="Sapphire Squad">
+											<option value="Squirtle">Squirtle</option>
+											<option value="Wartortle">Wartortle</option>
+											<option value="Blastoise">Blastoise</option>
+										</optgroup>
+										<optgroup label="Ruby Squad">
+											<option value="Charmander">Charmander</option>
+											<option value="Charmeleon">Charmeleon</option>
+											<option value="Charizard">Charizard</option>
+										</optgroup>
+										<optgroup label="Emerald Squad">
+											<option value="Bulbasaur">Bulbasaur</option>
+											<option value="Ivysaur">Ivysaur</option>
+											<option value="Venusaur">Venusaur</option>
+										</optgroup>
+									</select>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="project-summary-textarea">Summary<br></label>
+								<div class="controls">
+									<textarea id="project-summary-textarea" rows="7" style="width:340px; resize:none;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper interdum orci, vel elementum felis porta sed. Nam cursus porttitor enim, ultrices luctus neque interdum pretium. Aliquam quam lorem, vestibulum non ullamcorper eget, elementum in enim amet.</textarea>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+					
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn btn-inverse" data-dismiss="modal" >Close</a> <a href="#" class="btn btn-primary btn-medium">Save</a>
+		</div>
+	</div>
+  <!-- Manage Screenshots -->
+	<div id="xkcd-manage-screenshots" class="modal hide fade">
+		<div class="modal-header">
+			&nbsp;<a class="close" data-dismiss="modal" >&times;</a>
+		</div>
+		<div class="modal-body scrollable">
+			<div class="row">
+				<div class="span7">
+					<form class="form-horizontal">
+						<fieldset>
+							<legend>Manage Screenshots</legend>
+							<div class="alert alert-error">
+								<a class="close" data-dismiss="alert">&times;</a>
+								<h4 class="alert-heading">Upload Error</h4>
+								Screenshot must be a JPEG or PNG.
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="project-name-input">Upload Screenshot</label>
+								<div class="controls">
+									<input class="input-file" id="project-icon-upload" type="file">
+								</div>
+							</div>
+						</fieldset>
+					</form>
+					<div class="edit-screenshot clearfix">
+						<div class="screenshot-thumbnail" style="float:left;"><img src="img/screenshots/xkcd1.jpg" style="width:218px; height:125px;"></div>
+						<div class="screenshot-form" style="float:right; text-align:right;">
+							<input type="text" style="width:250px" value="XKCD 1" id="screenshot1-name-input"><br><input type="text" style="width:250px" value="Lorem ipsum..." id="screenshot1-description-input"><br><button class="btn btn-danger">Delete</button></td>
+						</div>
+					</div>
+					<div class="screenshot-footer" style="height:5px;"></div>
+
+					<div class="edit-screenshot clearfix">
+						<div class="screenshot-thumbnail" style="float:left;"><img src="img/screenshots/xkcd1.jpg" style="width:218px; height:125px;"></div>
+						<div class="screenshot-form" style="float:right; text-align:right;">
+							<input type="text" style="width:250px" value="XKCD 2" id="screenshot1-name-input"><br><input type="text" style="width:250px" value="Lorem ipsum..." id="screenshot1-description-input"><br><button class="btn btn-danger">Delete</button></td>
+						</div>
+					</div>
+					<div class="screenshot-footer" style="height:5px;"></div>
+
+					<div class="edit-screenshot clearfix">
+						<div class="screenshot-thumbnail" style="float:left;"><img src="img/screenshots/xkcd1.jpg" style="width:218px; height:125px;"></div>
+						<div class="screenshot-form" style="float:right; text-align:right;">
+							<input type="text" style="width:250px" value="XKCD 3" id="screenshot1-name-input"><br><input type="text" style="width:250px" value="Lorem ipsum..." id="screenshot1-description-input"><br><button class="btn btn-danger">Delete</button></td>
+						</div>
+					</div>
+					<div class="screenshot-footer" style="height:5px;"></div>
+
+					<div class="edit-screenshot clearfix">
+						<div class="screenshot-thumbnail" style="float:left;"><img src="img/screenshots/xkcd1.jpg" style="width:218px; height:125px;"></div>
+						<div class="screenshot-form" style="float:right; text-align:right;">
+							<input type="text" style="width:250px" value="XKCD 4" id="screenshot1-name-input"><br><input type="text" style="width:250px" value="Lorem ipsum..." id="screenshot1-description-input"><br><button class="btn btn-danger">Delete</button></td>
+						</div>
+					</div>
+					<div class="screenshot-footer" style="height:5px;"></div>
+
+					<div class="edit-screenshot clearfix">
+						<div class="screenshot-thumbnail" style="float:left;"><img src="img/screenshots/xkcd1.jpg" style="width:218px; height:125px;"></div>
+						<div class="screenshot-form" style="float:right; text-align:right;">
+							<input type="text" style="width:250px" value="XKCD 5" id="screenshot1-name-input"><br><input type="text" style="width:250px" value="Lorem ipsum..." id="screenshot1-description-input"><br><button class="btn btn-danger">Delete</button></td>
+						</div>
+					</div>
+					<div class="screenshot-footer" style="height:5px;"></div>
+
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn btn-inverse" data-dismiss="modal" >Close</a> <a href="#" class="btn btn-primary btn-medium">Save</a>
+		</div>
+  </div>
+  <!-- Edit Goals -->
+	<div id="xkcd-edit-goals" class="modal hide fade">
+		<div class="modal-header">
+			&nbsp;<a class="close" data-dismiss="modal" >&times;</a>
+		</div>
+		<div class="modal-body scrollable">
+			<div class="row">
+				<div class="span7">
+					<form class="form-horizontal">
+						<fieldset>
+							<legend>Short-terrm Goals</legend>
+
+							<div class="control-group">
+								<label class="control-label" for="project-name-input">Date</label>
+								<div class="controls">
+									<input type="text" style="width:250px" value="4/16/2012" id="project-short-goal-date">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="project-short-textarea">Goals<br></label>
+								<div class="controls">
+									<textarea id="project-short-textarea" rows="9" style="width:360px; resize:none;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper interdum orci, vel elementum felis porta sed. Nam cursus porttitor enim, ultrices luctus neque interdum pretium. Aliquam quam lorem, vestibulum non ullamcorper eget, elementum in enim amet.</textarea>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+					
+					<form class="form-horizontal">
+						<fieldset>
+							<legend>Medium-term Goals</legend>
+
+							<div class="control-group">
+								<label class="control-label" for="project-name-input">Date</label>
+								<div class="controls">
+									<input type="text" style="width:250px" value="8/16/2012" id="project-medium-goal-date">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="project-medium-textarea">Goals<br></label>
+								<div class="controls">
+									<textarea id="project-summary-textarea" rows="9" style="width:360px; resize:none;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper interdum orci, vel elementum felis porta sed. Nam cursus porttitor enim, ultrices luctus neque interdum pretium. Aliquam quam lorem, vestibulum non ullamcorper eget, elementum in enim amet.</textarea>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+					
+					<form class="form-horizontal">
+						<fieldset>
+							<legend>Long-term Goals</legend>
+
+							<div class="control-group">
+								<label class="control-label" for="project-name-input">Date</label>
+								<div class="controls">
+									<input type="text" style="width:250px" value="12/16/2012" id="project-long-goal-date">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="project-long-textarea">Goals<br></label>
+								<div class="controls">
+									<textarea id="project-long-textarea" rows="9" style="width:360px; resize:none;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper interdum orci, vel elementum felis porta sed. Nam cursus porttitor enim, ultrices luctus neque interdum pretium. Aliquam quam lorem, vestibulum non ullamcorper eget, elementum in enim amet.</textarea>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn btn-inverse" data-dismiss="modal" >Close</a> <a href="#" class="btn btn-primary btn-medium">Save</a>
+		</div>
+	</div>
+	
+	<!-- Goals -->
+	<div id="xkcd-goals" class="modal hide fade">
+		<div class="modal-header">
+			&nbsp;<a class="close" data-dismiss="modal" >&times;</a>
+		</div>
+		<div class="modal-body scrollable">
+			<div class="row">
+				<div class="span7">
+					<div class="goal-header clearfix">
+						<div style="float:left;"><h2>Short-term Goals</h2></div>
+						<div style="float:right; text-align:right; padding-top:12px; vertical-align:bottom; color:#ebad34;">April 16th, 2012</div>
+					</div>
+					<div class="well">
+						<ul><span style="color:#6ce941;">✔</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ul>
+						<ul><span style="color:#6ce941;">✔</span> Ut semper interdum orci, vel elementum felis porta sed.</ul>
+						<ul><span style="color:#6ce941;">✔</span> Nam cursus porttitor enim, ultrices luctus neque interdum pretium.</ul>
+						<ul><span style="color:#6ce941;">✔</span> Aliquam quam lorem, vestibulum non ullamcorper eget, elementum in enim amet.</ul>
+					</div>
+					<div class="goal-footer" style="height:5px;"></div>
+					<div class="goal-header clearfix">
+						<div style="float:left;"><h2>Medium-term Goals</h2></div>
+						<div style="float:right; text-align:right; padding-top:12px; vertical-align:bottom; color:#ebad34;">August 16th, 2012</div>
+					</div>
+					<div class="well">
+						<ul><span style="color:#6ce941;">✔</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ul>
+						<ul><span style="color:#6ce941;">✔</span> Ut semper interdum orci, vel elementum felis porta sed.</ul>
+						<ul><span style="color:#6ce941;">✔</span> Nam cursus porttitor enim, ultrices luctus neque interdum pretium.</ul>
+						<ul><span style="color:#6ce941;">✔</span> Aliquam quam lorem, vestibulum non ullamcorper eget, elementum in enim amet.</ul>
+					</div>
+					<div class="goal-footer" style="height:5px;"></div>
+					<div class="goal-header clearfix">
+						<div style="float:left;"><h2>Long-term Goals</h2></div>
+						<div style="float:right; text-align:right; padding-top:12px; vertical-align:bottom; color:#ebad34;">December 16th, 2012</div>
+					</div>
+					<div class="well">
+						<ul><span style="color:#6ce941;">✔</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ul>
+						<ul><span style="color:#6ce941;">✔</span> Ut semper interdum orci, vel elementum felis porta sed.</ul>
+						<ul><span style="color:#6ce941;">✔</span> Nam cursus porttitor enim, ultrices luctus neque interdum pretium.</ul>
+						<ul><span style="color:#6ce941;">✔</span> Aliquam quam lorem, vestibulum non ullamcorper eget, elementum in enim amet.</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn btn-inverse" data-dismiss="modal" >Close</a> <a href="#" class="btn btn-primary btn-medium">Save</a>
+		</div>
+	</div>
+	</body>
+</html>
